@@ -248,7 +248,7 @@ baseHtml.forEach(function(html,cle1){
                 htmlcr.classList.add('animcour')
                 menuMobil.classList.remove('afficheMenu')
                 body.classList.remove('noscroll')
-                inpburger.checked = "false"
+                // inpburger.checked = "false"
                 console.log(inpburger)
             }
         })
