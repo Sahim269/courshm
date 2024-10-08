@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../bootsrap/css/bootstrap.min.css">
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" >
+        </div>
+        <label for="inputPassword5" class="form-label">Password</label>
+        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
+        <div id="passwordHelpBlock" class="form-text">
+        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+        </div>
+        <div>
+            <span id="nofound"></span>
+        </div>
+        <input class="btn btn-primary" id="btn" type="submit" value="Submit">
+    </form>
+    <a href="create.html">creer un compte</a>
+
+    <script>
+        let user = [
+            {
+                mdp : "sahim",
+                email : "sahim0704@gmail.com"
+            },
+            {
+                mdp : "lui",
+                email : "lui@2.fr"
+            }
+        ]
+
+        
+        const btn = document.getElementById('btn')
+        const nofound = document.getElementById('nofound')
+
+        btn.addEventListener('click',function(event){
+            event.preventDefault()
+            const mdp = document.getElementById('inputPassword5').value
+            const email = document.getElementById('exampleFormControlInput1').value
+            let found = false
+            user.forEach(function(us){
+                if(mdp === us.mdp && email === us.email){
+                    found = true
+                }
+            })
+            if(found){
+                // alert('oui')
+                window.location.href = "index2.html"
+                nofound.textContent = ""
+            }else{
+                // alert('pas bon')
+                nofound.textContent = "mot de passe ou email incorecte"
+                nofound.style.color = "red"
+            }
+        })
+        
+            
+    </script>
+</body>
+</html>

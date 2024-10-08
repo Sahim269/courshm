@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Atelier Formulaire</title>
+ <style>
+ .error {
+ color: red;
+ font-size: 0.9em;
+}
+ .success {
+ color: green;
+ font-size: 1.1em;
+ }
+ .contform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
+ body{
+    display: flex;
+    justify-content: space-evenly;
+ }
+ </style>
+</head>
+<body>
+    <div class="contform">
+        <h1>Formulaire d'Inscription</h1>
+        <form id="inscriptionForm">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+            <span class="error" id="nomError"></span><br><br>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error" id="emailError"></span><br><br>
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password" required>
+            <span class="error" id="passwordError"></span><br><br>
+
+            <button id="envoie" type="submit">S'inscrire</button>
+        </form>
+    </div>
+    <div id="message" class="success">
+        <h2>Informations soumise</h2>
+    </div>
+ <script>
+    const nom = document.getElementById('nom')
+    const email = document.getElementById('email')
+    const password = document.getElementById('password')
+    const envoie = document.getElementById('envoie')
+    const message = document.getElementById('message')
+
+    envoie.addEventListener('click',function(event){
+        event.preventDefault()
+
+        if(nom.value != "" && email.value != "" && password.value != ""){
+
+            // console.log("yes")
+
+            const name = document.createElement('p')
+            const emails = document.createElement('p')
+            const passwords = document.createElement('p')
+
+            name.textContent = `Nom : ${nom.value}`
+            emails.textContent = `email : ${email.value}`
+            passwords.textContent = `mot de passe : ${password.value}`
+
+            message.appendChild(name)
+            message.appendChild(emails)
+            message.appendChild(passwords)
+
+            nom.value = ""
+            password.value = ""
+            email.value = ""
+        }
+    })
+
+ </script>
+</body>
+</html>

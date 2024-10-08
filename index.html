@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .container-input {
+  position: relative;
+}
+
+.input {
+  width: 150px;
+  padding: 10px 0px 10px 40px;
+  border-radius: 9999px;
+  border: solid 1px #333;
+  transition: all .2s ease-in-out;
+  outline: none;
+  opacity: 0.8;
+}
+
+.container-input svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+}
+
+.input:focus {
+  opacity: 1;
+  width: 250px;
+}
+/* .book {
+  position: relative;
+  border-radius: 10px;
+  width: 220px;
+  height: 300px;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  -webkit-transform: preserve-3d;
+  -ms-transform: preserve-3d;
+  transform: preserve-3d;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.cover {
+  top: 0;
+  position: absolute;
+  background-color: lightgray;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-origin: 0;
+  -ms-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.book:hover .cover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotatey(-80deg);
+  -ms-transform: rotatey(-80deg);
+  transform: rotatey(-80deg);
+} */
+
+p {
+  font-size: 20px;
+  font-weight: bolder;
+}
+.sec1{
+    /* background: url(img/img1.jpg); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+#login:hover{
+    background-color: #a6a5a56d;
+}
+#signin:hover{
+    background-color: #a6a5a5a6;
+}
+.sec1 {
+    height: 350px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel {
+    width: 1400px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.carousel-inner {
+    display: flex;
+    /* width: 200%;  */
+    transition: transform 0.5s ease;
+    /* transform: translateX(-100%); */
+}
+
+.carousel-item {
+    width: 100%; /* Half the width of the container */
+    flex-shrink: 0;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    /* display: block; */
+}
+
+    </style>
+</head>
+<body>
+    <header style="box-shadow: 0px 0px 1px black;">
+        <nav style="display: flex;justify-content: space-evenly;align-items: center;height: 70px;box-shadow: 0px 0px 7px black;border-radius: 5px;position: relative;">
+            <div style="display: flex;align-items: center;column-gap: 100px;">
+                <img style="width: 100px;" src="img/icon.png" alt="">
+                <button id="afficheCat" style="background-color: transparent;border: none;cursor: pointer;font-family: Arial, Helvetica, sans-serif;font-weight: bold;position: relative;color: rgb(156, 156, 156);font-size: 18px;">Catégories
+                    <div id="sousCat" style="position: absolute;left: -20px;top: 45px;background-color: gainsboro;transition: all 0.5s ease-out;height: 0px;overflow: hidden;z-index: 1;">
+                        <ul type="none" style="padding: 10px;width: 160px;">
+                            <li style="padding: 10px;border-bottom: 1px solid black;"><a href="#">HTML</a></li>
+                            <li style="padding: 10px;border-bottom: 1px solid black;"><a href="#">CSS</a></li>
+                            <li style="padding: 10px;border-bottom: 1px solid black;"><a href="#">JavaSript</a></li>
+                        </ul>
+                    </div>
+                </button>
+            </div>
+            <div class="container-input">
+                <input type="text" placeholder="Search" name="text" class="input">
+                <svg fill="#000000" width="20px" height="20px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z" fill-rule="evenodd"></path>
+              </svg>
+              </div>
+              
+            <div>
+                <a id="login" style="margin-right:20PX ;border: 1px solid black;padding: 5px;text-decoration: none;color: black;font-family: Arial, Helvetica, sans-serif;font-weight: bold;" href="#">Se connecter</a>
+                <a id="signin" style="margin-right:20PX ;border: 1px solid black;padding: 5px;text-decoration: none;color: white;font-family: Arial, Helvetica, sans-serif;font-weight: bold;background-color: black;"  href="#">S'inscrire</a>
+            </div>
+        </nav>
+        <section class="sec1">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item"><img src="img/img1.jpg" alt="Image 1"></div>
+                    <div class="carousel-item"><img src="img/css-3.png" alt="Image 2"></div>
+                </div>
+            </div>
+            
+        </section>
+    </header>
+
+    <section style="margin-top: 80px;display: flex;justify-content: center;background-color: #edebeb;">
+        <div style="width: 70%;display: flex;justify-content: center;flex-direction: column;align-items: center;row-gap: 20PX;padding-top: 40px;padding-bottom: 40px;">
+            <p style="font-family: 'Courier New', Courier, monospace;text-align: center;font-weight: bold;font-size: 20px;color: rgb(168, 166, 166);">Trusted by over 16 000 companies and millions of learners around the world</p>
+            <div id="contcomp" style="display: flex;justify-content: center;width: 100%;column-gap: 100px;flex-wrap: wrap;">
+                <img style="width: 70px;" src="img/letter-s.png" alt="">
+                <img style="width: 70px;" src="img/letter-a-inside-a-circle.png" alt="">
+                <img style="width: 70px;" src="img/circle-h.png" alt="">
+                <img style="width: 70px;" src="img/info.png" alt="">
+                <img style="width: 70px;" src="img/letter-m.png" alt="">
+                <img style="width: 70px;" src="img/number-11.png" alt="">
+            </div>
+        </div>
+    </section>
+    
+    <section style="display: flex;justify-content: center;text-align: center;margin-top: 80px;">
+        <div style="width: 75%;display: flex;flex-direction: column;row-gap: 40PX;align-items: center;">
+            <h2 style="width: 600px;font-weight: 600PX;font-size: 40px;font-family: Arial, Helvetica, sans-serif;">La plateforme parfaite pour booster vos compétences techniques</h2>
+            <div style="display: flex;column-gap: 50px;">
+                <div style="display: flex;flex-direction: column;align-items: center;width: 50%;text-align: center;row-gap: 20PX;">
+                    <img style="width: 280px;" src="img/Capture_d_écran_24-6-2024_22458_blob.sololearn.com-removebg-preview.png" alt="">
+                    <h4 style="font-family: Arial, Helvetica, sans-serif;font-size: 30px;margin-top: 15px;">Étudiants</h4>
+                    <p style="font-weight: normal;color: darkgray;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Vous préparez un gros examen ou vous voulez réussir votre premier entretien ? Utilisez la pratique en situation réelle de Sololearn pour renforcer ce que vous avez appris et vous préparer pour ce grand moment.</p>
+                </div>
+                <div style="display: flex;flex-direction: column;align-items: center;width: 50%;text-align: center;row-gap: 15PX;">
+                    <img style="width: 280px;" src="img/Capture_d_écran_24-6-2024_224917_assets.sololearn.com__1_-removebg-preview.png" alt="">
+                    <h4 style="font-family: Arial, Helvetica, sans-serif;font-size: 30px;">Professionnels</h4>
+                    <p style="font-weight: normal;color: darkgray;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Vous pouvez apprendre quelque chose de totalement nouveau pour faire avancer votre carrière. Ou peut-être que vous voulez simplement dépoussiérer vos compétences. Essayez Sololearn pour accéder à une variété de cours, de l'apprentissage automatique au développement web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: #777;display: flex;justify-content: center;width: 100%;padding-top: 30px;padding-bottom: 30px;margin-top: 30px;flex-direction: column;align-items: center;">
+        <div style="display: flex;justify-content: center;column-gap: 100px;font-size: 17px;color: white;font-weight: bold;font-family: Arial, Helvetica, sans-serif;">
+            <div>
+                <ul type="none">
+                    <li style="margin-bottom: 10px;">SHM business</li>
+                    <li style="margin-bottom: 10px;">Enseigner sur SHM</li>
+                    <li style="margin-bottom: 10px;">A propos de SHM</li>
+                    <li style="margin-bottom: 10px;">Contactez-nous</li>
+                </ul>
+            </div>
+            <div>
+                <ul type="none">
+                    <li style="margin-bottom: 10px;">Carriere</li>
+                    <li style="margin-bottom: 10px;">Blog</li>
+                    <li style="margin-bottom: 10px;">Aide et support</li>
+                    <li style="margin-bottom: 10px;">Affilié</li>
+                </ul>
+            </div>
+            <div>
+                <ul type="none">
+                    <li style="margin-bottom: 10px;">Investisseur</li>
+                    <li style="margin-bottom: 10px;">Conditions</li>
+                    <li style="margin-bottom: 10px;">Paramétre de confidentialité</li>
+                    <li style="margin-bottom: 10px;">Plan du site</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <img src="img/icon.png" style="width: 150px;" alt="">
+        </div>
+    </footer>
+    
+    <script>
+        const btnafficheCat = document.getElementById('afficheCat')
+        const sousCat = document.getElementById('sousCat')
+        const iconfleche = document.getElementById('iconfleche')
+
+        function afficheCat(){
+            if(sousCat.style.height === '0px'){
+                sousCat.style.height = 'auto'
+            }else{
+                sousCat.style.height = '0px'
+            }
+        }
+        function cacherCat(){
+                sousCat.style.height = '0px'
+        }
+        btnafficheCat.addEventListener('click',afficheCat)
+        document.addEventListener('click',function(event){
+            if(event.target !== sousCat &&  sousCat.style.height !== '0px' && event.target !== btnafficheCat){
+                cacherCat()
+            }
+        })
+        document.addEventListener('keydown',function(event){
+            if(event.key === 'Escape'){
+                cacherCat()
+            }
+        })
+
+        const btnHTML = document.getElementById('btnHTML')
+        const btnCSS = document.getElementById('btnCSS')
+        const btnJS = document.getElementById('btnJS')
+        const courCSS = document.getElementById('courCSS')
+        const courhtml = document.getElementById('courhtml')
+
+        btnCSS.addEventListener('click',function(){
+            btnCSS.style.borderBottom = '2px solid red'
+            btnCSS.style.padding = '4px'
+            btnHTML.style.borderBottom = 'none'
+        })
+        btnHTML.addEventListener('click',function(){
+            btnHTML.style.borderBottom = '2px solid red'
+            btnHTML.style.padding = '4px'
+            btnCSS.style.borderBottom = 'none'
+            btnCSS.style.padding = '4px'
+        })
+
+        const caroussel = document.getElementById('caroussel')
+        const avant = document.getElementById('avant')
+        const apres = document.getElementById('apres')
+        let current = 1
+
+        function avancer(){
+            
+            if(current<2){
+                current++
+                caroussel.style.transform = `translateX(-${(current-1)*113}%)`
+            }
+        }
+        function reculer(){
+            if(current>1){
+                current--
+                caroussel.style.transform = `translateX(${(current-1)*113}%)`
+            }
+        }
+
+    </script>
+</body>
+</html>
