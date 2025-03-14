@@ -2,6 +2,7 @@ const btnafficheCat = document.getElementById('afficheCat')
 const sousCat = document.getElementById('sousCat')
 const iconfleche = document.getElementById('iconfleche')
 
+// 
 function afficheCat(){
     if(sousCat.style.opacity === '0'){
         sousCat.style.opacity = '1'
